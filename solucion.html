@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="solu.css" type="text/css">
+        <title>vulnerabilidad por hackers en sistemas informaticos</title>
+
+    </head>
+
+    <body>
+
+    <div id="container">
+
+    <header>
+        <h1>SOLUCION DEL PROBLEMA</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="incorpo.html">inportancia IA</a></li>
+            <li><a href="index.html">inicio</a></li>
+        </ul>
+    </nav>
+    <div class="clearfix"></div>
+
+    <section id="content">
+
+        <article class="article">
+            <h2>Algoritmo de Detección de Vulnerabilidades</h2>
+            <p>1. Análisis de vulnerabilidades conocidas (CVE)
+            <p>2. Escaneo de redes y sistemas para detectar vulnerabilidades
+            <p>3. Evaluación de riesgos y priorización de vulnerabilidades
+            <p>4. Notificación de vulnerabilidades detectadas</p>
+        </article>
+
+        <article class="article">
+            <h2>Código</h2>
+            <p>import scapy.all as scapy
+            <p>import nmap
+            <p>from openvas import OpenVAS
+            <p>from flask import Flask, render_template
+
+            <p>app = Flask(__name__)
+
+            <p>def scan_network(ip_range):
+            <p># Escaneo de redes utilizando Scapy
+            <p>arp_request = scapy.ARP(pdst=ip_range)
+            <p>broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
+            <p>arp_request_broadcast = broadcast/arp_request
+            <p>answered_list = scapy.srp(arp_request_broadcast, timeout=1, verbose=False)[0]
+            <p>return answered_list
+
+            <p>def scan_ports(ip):
+            <p># Escaneo de puertos utilizando Nmap
+            <p>nm = nmap.PortScanner()
+            <p>nm.scan(ip, '1-1024')
+            <p>return nm[ip]['tcp'].keys()
+
+            <p>def analyze_vulnerabilities(ip):
+            <p># Análisis de vulnerabilidades utilizando OpenVAS
+            <p>openvas = OpenVAS()
+            <p>openvas.scan(ip)
+            <p>return openvas.get_results()
+
+            <p>@app.route('/')
+            <p>def index():
+            <p>return render_template('index.html')
+
+            <p>@app.route('/scan', methods=['POST'])
+            <p>def scan():
+            <p>ip_range = request.form['ip_range']
+            <p>results = scan_network(ip_range)
+            <p>return render_template('results.html', results=results)
+
+            <p>if __name__ == '__main__':
+            <p>app.run(debug=True)/p>
+        </article>
+
+        <article class="article">
+            <h2>Diagrama de flujo</h2>
+
+            <p>1. Ingreso de rango de IP.
+            <p>2. Escaneo de redes.
+            <p>3. Escaneo de puertos.
+            <p>4. Análisis de vulnerabilidades.
+            <p>5. Notificación de vulnerabilidades detectadas.</p>
+        </article>
+
+    </section>
+
+    <aside>
+        <h2>DATOS</h2>
+        <form>
+    <h2>Solución</h2>
+            <p>Desarrollo de un algoritmo de detección de vulnerabilidades utilizando programación funcional y creación de una página web para facilitar la solución.</p>   
+    <h2>Lenguaje de programación</h2>
+            <p>Python</p>
+    <h2>Librerías utilizadas:</h2>
+            <p>- Scapy (escaneo de redes)
+            <p>- Nmap (escaneo de puertos)
+            <p>- OpenVAS (análisis de vulnerabilidades)
+            <p>- Flask (desarrollo web)</p>
+    <h2>Página web</h2>
+            <p>- Index.html: formulario para ingresar rango de IP.
+            <p>- Results.html: muestra los resultados del escaneo.</p>
+    <h2>Ventajas</h2>
+            <p>- Detección de vulnerabilidades en tiempo real
+            <p>- Notificación inmediata de vulnerabilidades detectadas
+            <p>- Análisis de riesgos y priorización de vulnerabilidades</p>
+    <h2>Desventajas</h2>
+            <p>- Requiere conocimientos técnicos para configurar y utilizar
+            <p>- Puede generar falsos positivos</p>
+    <h2>Conclusión</h2>
+            <p>El sistema de detección de vulnerabilidades propuesto es una solución efectiva para mitigar la problemática de la vulnerabilidad por hackers en sistemas informáticos. La implementación de un algoritmo de detección de vulnerabilidades y una página web para facilitar la solución, permite una detección en tiempo real y notificación inmediata de vulnerabilidades detectadas.</p>
+        </form>
+    </aside>
+    
+    </aside>
+
+    <div class="clearfix"></div>
+
+    <footer>
+       Dilan Prieto WEB &copy; 2024
+    </footer>
+
+    </div>
+   
+    </body>
+</html>
